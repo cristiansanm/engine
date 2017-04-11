@@ -1,7 +1,9 @@
 package com.tecsup.sanchez.myapp;
 
+import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Canvas;
 
 import java.util.HashMap;
 
@@ -10,24 +12,31 @@ import java.util.HashMap;
  */
 public class Resources {
 
-    private GameView view;
-    private HashMap<String,Bitmap> pool;
+    public HashMap texturePool;
+    public SoundManager sounds;
+    public Context mContext;
+    public int fps;
+    public Canvas canvas;
+    public PointF aspect;
+    public String hasKey;
 
-    public Resources(GameView view){
-        this.view = view;
-        pool  = new HashMap<String, Bitmap>();
+    public Resources (Context _context)
+    {
+        fps = 32;
+        hasKey = "";
+        mContext = _context;
+        texturePool = new HashMap();
+        sounds =  new SoundManager(_context);
     }
-
-    public Bitmap getBmp(String resource){
-        if(!this.pool.containsKey(resource)){
-            this.pool.put(resource, BitmapFactory.decodeResource(this.view.getResources(),this.view.getResources().getIdentifier(resource , "drawable", this.view.getContext().getPackageName())));
+    public void loadTexture (String key, int resource){
+        if (texturePool.containsKey(key))
+        {
+            Bitmap bmp = null;
+            bmp = BitmapFactory.decodeResource(mContext.getResources(), resource);
+            texturePool.put(key, bmp);
         }
-
-        return this.pool.get(resource);
     }
+    public void
 
-    public Bitmap removeBmp(String resource){
-        return this.pool.remove(resource);
-    }
 
 }
