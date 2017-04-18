@@ -11,21 +11,21 @@ import android.view.animation.Transformation;
  */
 public abstract class DisplayObject extends EventDispatcher {
 
-    public int height, width;
-    public float opacity, scaleX, scaleY;
-    public int pivotX, pivotY, rotation;
-    public Transformation transformation;
-    public boolean visible;
-    public int x,y;
-    public DisplayObject parent;
+    public int height = 0, width = 0;
+    public float opacity = 1.0f, scaleX = 1.0f, scaleY = 1.0f;
+    public int pivotX  = 0, pivotY = 0, rotation = 0;
+    /*public Transformation transformation;*/
+    public boolean visible = true;
+    public int x =0,y = 0;
+    public DisplayObject parent = null;
     public Resources resources;
 
     public DisplayObject () {}
     public void dispatchEvent (/*Event e*/){}
     public void dispatchEvent (String e){}
     public void dispose (){}
-    public Point globlalToLocal (Point p) {}
-    public Point localToGlobal (Point p) {}
+    public Point globlalToLocal (Point p) {return new Point();}
+    public Point localToGlobal (Point p) {return new Point();}
     public abstract void onDraw ();
     public void primaryOperations(){}
     public void touchDown (Point p, int index){}
