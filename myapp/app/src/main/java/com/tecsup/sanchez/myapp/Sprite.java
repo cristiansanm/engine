@@ -7,7 +7,9 @@ import android.graphics.Rect;
  
 
 public class Sprite extends DisplayContainer{
-public Sprite ()
+public Sprite (){
+
+}
 
 }
 

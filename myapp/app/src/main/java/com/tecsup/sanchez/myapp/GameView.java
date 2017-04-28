@@ -81,10 +81,11 @@ public class GameView extends SurfaceView {
     @Override
 
     protected void onDraw(Canvas canvas) {
-
-        canvas.drawColor(Color.BLACK);
-        myScene.onDraw();
         resources.canvas = canvas;
+        canvas.drawColor(Color.BLACK);
+
+
+        myScene.onDraw();
     }
 
 

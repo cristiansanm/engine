@@ -4,15 +4,21 @@ package com.tecsup.sanchez.myapp;
  */
 public class MainScene extends DisplayContainer{
 
-    npc bad;
+    Resources resources;
+    Image img,img2;
     public MainScene(Resources resources){
 
-        super(resources);
-        for(int i=1; i<7;++i){
-            bad = new npc("bad"+i, resources);
-            bad.x = (int)(Math.random()*500.0f);
-            addChild(bad);
-        }
+        super();
+        this.resources = resources;
+        img = new Image("bad","bad",R.drawable.bad1,this.resources);
+        img.rotation = 45;
+        img.scaleX=5;
+        img.scaleY=2;
+        img2 = new Image("good1","good1",R.drawable.good1,this.resources);
+
+        this.addChild(img);
+        this.addChild(img2);
+
     }
 
     @Override
