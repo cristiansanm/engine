@@ -11,13 +11,17 @@ public class MainScene extends DisplayContainer{
         super();
         this.resources = resources;
         img = new Image("bad","bad",R.drawable.bad1,this.resources);
-        img.rotation = 45;
-        img.scaleX=5;
-        img.scaleY=2;
+        //img.rotation = 0;
+        img.scaleX=-1;
+        //img.scaleY=-1;
+        img.opacity = 1F;
+
+
+        img.x = img.width;
         img2 = new Image("good1","good1",R.drawable.good1,this.resources);
 
         this.addChild(img);
-        this.addChild(img2);
+        //this.addChild(img2);
 
     }
 

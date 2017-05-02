@@ -14,7 +14,7 @@ public abstract class DisplayObject extends EventDispatcher {
     public int height = 0, width = 0;
     public float opacity = 1.0f, scaleX = 1.0f, scaleY = 1.0f;
     public int pivotX  = 0, pivotY = 0, rotation = 0;
-    /*public Transformation transformation;*/
+    //public Transformation transformation;
     public boolean visible = true;
     public int x =0,y = 0;
     public DisplayObject parent = null;
